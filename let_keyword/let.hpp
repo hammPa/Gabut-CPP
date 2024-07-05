@@ -393,7 +393,8 @@ public:
                     } else if (std::holds_alternative<std::string>(myLet.data)) {
                         os << std::get<std::string>(myLet.data) << " (std::string)";
                     } else {
-                        throw std::runtime_error("Unsupported type in let variant");
+                        // throw std::runtime_error("Unsupported type in let variant");
+                        throw std::runtime_error("Salahnya di operator<<");
                     }
                 }
             }
@@ -404,6 +405,9 @@ public:
                 for (const auto& item : myLet.arr) {
                     if (std::holds_alternative<int>(item)) {
                         os << std::get<int>(item) << " ";
+                    }
+                    else if (std::holds_alternative<bool>(item)) {
+                        os << (std::get<bool>(item) == 1 ? "true" : "false") << " ";
                     }
                     else if (std::holds_alternative<float>(item)) {
                         os << std::get<float>(item) << " ";
@@ -481,7 +485,7 @@ public:
         // Gunakan konstruktor untuk menginisialisasi let dengan nilai dari variant yang sesuai
         if (std::holds_alternative<int>(item)) {
             return let(std::get<int>(item));
-        } else if (std::holds_alternative<bool>(data)) {
+        } else if (std::holds_alternative<bool>(item)) {
             return let(std::get<bool>(item));
         } else if (std::holds_alternative<float>(item)) {
             return let(std::get<float>(item));
@@ -493,7 +497,8 @@ public:
             const char *temp = std::get<std::string>(item).c_str();
             return let(temp);
         } else {
-            throw std::runtime_error("Unsupported type in let variant");
+            // throw std::runtime_error("Unsupported type in let variant");
+            throw std::runtime_error("Salahnya di operator[]");
         }
     }
 
@@ -514,9 +519,11 @@ public:
                 const char *temp = std::get<std::string>(data).c_str();
                 func(let(temp));
             } else {
-                throw std::runtime_error("Ntahlah, ga kebaca dia");
+                throw std::runtime_error("Salahnya di forEach");
             }
         }
     }
+
+    
 };
 
