@@ -32,24 +32,29 @@ public:
             std::cout << "|              : let huruf = 'c';                                  |\n";
             std::cout << "|              : let teks = \"hello world\";                         |\n";
             std::cout << "|                                                                  |\n";
-            std::cout << "|    2. Deklarasi array tipe data dasar ukuran dinamis :           |\n";
+            std::cout << "|    2. Operasi aritmatika                                         |\n";
+            std::cout << "|       Contoh : let angkaI = 10;                                  |\n";
+            std::cout << "|              : let angkaF = 10.5f;                               |\n";
+            std::cout << "|              : let hasilJumlah = angkaI + angkaF;                |\n";
+            std::cout << "|                                                                  |\n";
+            std::cout << "|    3. Deklarasi array tipe data dasar ukuran dinamis :           |\n";
             std::cout << "|       Contoh : let array = {10, \"hello\", 'c', 5.5};              |\n";
             std::cout << "|                                                                  |\n";
-            std::cout << "|    3. Memanggil variabel baik biasa maupun array                 |\n";
+            std::cout << "|    4. Memanggil variabel baik biasa maupun array                 |\n";
             std::cout << "|       Contoh : std::cout << angkaI <<  std::endl;                |\n";
             std::cout << "|              : std::cout << array << std::endl;                  |\n";
             std::cout << "|                                                                  |\n";
-            std::cout << "|    3. Memanggil variabel array dengan index                      |\n";
+            std::cout << "|    5. Memanggil variabel array dengan index                      |\n";
             std::cout << "|       Contoh : std::cout << array[0] <<  std::endl;              |\n";
             std::cout << "|              : std::cout << array[1] <<  std::endl;              |\n";
             std::cout << "|                                                                  |\n";
-            std::cout << "|    4. Membandingkan variabel array ataupun biasa                 |\n";
+            std::cout << "|    6. Membandingkan variabel array ataupun biasa                 |\n";
             std::cout << "|       Contoh : std::cout << (array1 == array2) <<  std::endl;    |\n";
             std::cout << "|              : std::cout << (array1 != array2) <<  std::endl;    |\n";
             std::cout << "|              : std::cout << (angka1 == angka2) <<  std::endl;    |\n";
             std::cout << "|              : std::cout << (angka1 != angka2) <<  std::endl;    |\n";
             std::cout << "|                                                                  |\n";
-            std::cout << "|    5. Melakukan input ke data biasa                              |\n";
+            std::cout << "|    7. Melakukan input ke data biasa                              |\n";
             std::cout << "|       Contoh : std::cin >> angka1                                |\n";
             std::cout << "|              : std::cin >> angka2                                |\n";
             std::cout << "|__________________________________________________________________|\n";
@@ -476,6 +481,8 @@ public:
         // Gunakan konstruktor untuk menginisialisasi let dengan nilai dari variant yang sesuai
         if (std::holds_alternative<int>(item)) {
             return let(std::get<int>(item));
+        } else if (std::holds_alternative<bool>(data)) {
+            return let(std::get<bool>(item));
         } else if (std::holds_alternative<float>(item)) {
             return let(std::get<float>(item));
         } else if (std::holds_alternative<double>(item)) {
@@ -487,6 +494,28 @@ public:
             return let(temp);
         } else {
             throw std::runtime_error("Unsupported type in let variant");
+        }
+    }
+
+    void forEach(void (*func)(let)){
+        for(int index = 0; index < arr.size(); index++){
+            std::variant<int, bool, float, double, char, std::string>& data = arr[index];
+            if (std::holds_alternative<int>(data)) {
+                func(let(std::get<int>(data)));
+            } else if (std::holds_alternative<bool>(data)) {
+                func(let(std::get<bool>(data)));
+            } else if (std::holds_alternative<float>(data)) {
+                func(let(std::get<float>(data)));
+            } else if (std::holds_alternative<double>(data)) {
+                func(let(std::get<double>(data)));
+            } else if (std::holds_alternative<char>(data)) {
+                func(let(std::get<char>(data)));
+            } else if (std::holds_alternative<std::string>(data)) { // ubah dulu ke const char*
+                const char *temp = std::get<std::string>(data).c_str();
+                func(let(temp));
+            } else {
+                throw std::runtime_error("Ntahlah, ga kebaca dia");
+            }
         }
     }
 };
