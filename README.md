@@ -32,6 +32,11 @@ Disini juga menggunakan method yang namanya mirip seperti vector yaitu push_back
 
 Terakhir, di header ini ada fitur untuk membandingkan nilai pada  variabel bertipe let baik  data tunggal maupun array berupa overloading operator== dan overloading operator != dan juga operasi aritmatika dengan menggunakan overloading operator+, operator-, operator*, dan operator/
 
+*ditambahkan fitur baru yaitu forEach yang isinya adalah function, syntaxnya seperti JS yaitu : 
+array.forEach([](let data){
+  std::cout << data << std::endl;
+});
+
 # 3. js_map
 Pada folder ini disediakann file header jsmap.hpp yang didalamnya terdapat class array custom dengan tipe data yang harus ditetapkan terlebih dahulu.
 Didalamnya terdapat method method yang mengimplementasikan konsep Higher Order Function pada JavaScript, yaitu :
