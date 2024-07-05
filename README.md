@@ -31,3 +31,12 @@ Disini juga memiliki overloading operator>> yang berguna untuk mendeteksi input 
 Disini juga menggunakan method yang namanya mirip seperti vector yaitu push_back dan pop_back untuk mengakses pus_back dan pop_back dari vector dari luar tanpa perlu menuliskan namaObjek.arr.push_back( jadi hanya perlu menuliskan namaObjek.push_back )
 
 Terakhir, di header ini ada fitur untuk membandingkan nilai pada  variabel bertipe let baik  data tunggal maupun array berupa overloading operator== dan overloading operator != dan juga operasi aritmatika dengan menggunakan overloading operator+, operator-, operator*, dan operator/
+
+# 3. js_map
+Pada folder ini disediakann file header jsmap.hpp yang didalamnya terdapat class array custom dengan tipe data yang harus ditetapkan terlebih dahulu.
+Didalamnya terdapat method method yang mengimplementasikan konsep Higher Order Function pada JavaScript, yaitu :
+a. foreach : fungsi ini menerima satu parameter berupa function, bisa function biasa atau lambda function, tapi direkomendasikan lambda function yang mereturn output, bisa cout ataupun printf, lalu data akan dieksekusi dengan looping yang setiap looping memeanggil function argumen tadi
+b. map     : mirip dengan foreach, tapi setiap looping akan menginput nilai dalam array baru, dan array baru akan dikembalikan pada akhir fungsi.
+c. sort    : akan mengurutkan array, bisa descending atau ascending, tergantung isi dari function parameter, detailnya :
+    - a - b : ascending
+    - b - a : descending
