@@ -2,6 +2,16 @@
 Ini Proyek dalam C++ saat saya bosan saja tidak ada kerjaan. Jadi jangan terlalu berharap lebih
 
 # 1. Dynamic Array
+Pada folder ini disediakan file header hammdynamicarr.hpp yang didalamnya terdapat struct Array dan juga class DynamicArray. 
+Didalam struct Array berisi variabel void pointer untuk menunjuk alamat memori dengan tipe data dinamis dan juga string info untuk mengecek tipe datanya nanti.
+Didalam DynamicArray terdapat variabel private index dan juga struct Array dengan ukuran max 100.
+
+Didalamnya terdapat 4 method yaitu :
+a. Default Constructor : konstruktor kosong yang tidak melakukan apapun
+b. Method void dengan dua parameter, yang pertama untuk menyimpan nilai terbaru dengan tipe dinamis menggunakan template, yang kedua untuk menyimpan sisa inputan yang lain, lalu akan dilakukan looping dengan rekursif untuk memasukkan input dari parameter kostruktor ke dalam variabel dinamis sesuai tipe data inputnya, lalu alamatnya akan ditunjuk oleh void pointer dan ditetapkan nama tipe datanya.
+Ini juga bisa digunakan untuk menginputkan 1 data ataupun lebih walau bukan disaat pertama inisialisasi.
+c. Constructor yang digunakan untuk input
+d. Menampilkandata dalam array void pointer dengan menggunakan parsing dengan tipe data pointer
 
 # 2. Let Keyword
 Pada folder ini disediakan file header let.hpp yang di dalamnya terdapat class let yang memiliki fungsi fungsi untuk melakukan assignment ke dalam variabel didalamnya untuk menghasilkan class yang mirip dengan keyword let di JavaScript.
