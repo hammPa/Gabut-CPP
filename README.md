@@ -42,6 +42,52 @@ Pada folder ini disediakann file header jsmap.hpp yang didalamnya terdapat class
 Didalamnya terdapat method method yang mengimplementasikan konsep Higher Order Function pada JavaScript, yaitu :
 a. foreach : fungsi ini menerima satu parameter berupa function, bisa function biasa atau lambda function, tapi direkomendasikan lambda function yang mereturn output, bisa cout ataupun printf, lalu data akan dieksekusi dengan looping yang setiap looping memeanggil function argumen tadi
 b. map     : mirip dengan foreach, tapi setiap looping akan menginput nilai dalam array baru, dan array baru akan dikembalikan pada akhir fungsi.
-c. sort    : akan mengurutkan array, bisa descending atau ascending, tergantung isi dari function parameter, detailnya :
-    - a - b : ascending
-    - b - a : descending
+c. sort    : akan mengurutkan array, bisa descending atau ascending, tergantung isi dari function parameter, detailnya :<br>
+    - a - b : ascending<br>
+    - b - a : descending<br>
+
+# 4. Array Library in C++
+📌 Deskripsi
+Array Library ini adalah implementasi array dinamis dalam C++ dengan berbagai fitur tambahan seperti:
+Push & Pop Elements
+Swap, Find, Delete
+Mathematical Operations (min, max, average, median, quartiles)
+Iterator Support
+Functional Operations (filter, forEach, reduce, contains)
+Operator Overloading
+Memory Management (reallocate)
+
+🛠️ Fitur Utama
+Manajemen Memori
+push(value1, value2, ...)
+pop()
+reallocate_with_sum_of_element()
+
+Akses Elemen
+arr[index]
+arr.at(index)
+arr.front()
+arr.back()
+
+Manipulasi Data
+change(index, value)
+delete_at(index)
+delete_duplicate()
+swap(index1, index2)
+
+Operasi Matematis
+max(), min(), average(), median()
+quartile1(), quartile2(), quartile3()
+mode()
+
+Fungsi Tingkat Lanjut
+reduce([](int a, int b){ return a + b; }, 0)
+contains(value)
+filter([](int data){ return data > 20; })
+forEach([](int data){ std::cout << data * 3 << "\n"; })
+
+Iterator Support
+begin() dan end() untuk iterasi elemen
+
+Operator Overloading
+Mendukung operasi ==, !=, *, dan lainnya
