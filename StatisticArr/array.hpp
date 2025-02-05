@@ -54,11 +54,10 @@ public:
         }
     }
 
-    void swap(Type val1, Type val2){ // indahkan nilainya
-        Type temp;
-        temp = val1;
-        val1 = val2;
-        val2 = temp;
+    void swap(size_t index1, size_t index2){ // indahkan nilainya
+        Type temp = data[index1];
+        data[index1] = data[index2];
+        data[index2] = temp;
     }
 
     const Type operator[](size_t index) const { // operator index
@@ -310,14 +309,14 @@ public:
         }
     }
 
-    bool some(std::function<void(Type&)> predicate){
+    bool some(std::function<void(Type&)> predicate){ // ada 1 nilai
         for(size_t i = 0; i < index; i++){
             if(predicate(data[i])) return true;
         }
         return false;
     }
 
-    bool every(std::function<void(const Type&)> predicate){
+    bool every(std::function<void(const Type&)> predicate){ // setiap nilai
         for(size_t i = 0; i < index; i++){
             if(!predicate(data[i])) return false;
         }
@@ -390,7 +389,7 @@ public:
 
         Type& operator*() { return *ptr; }
         Iterator& operator++() { ptr++; return *this; }
-        Iterator& operator++(int) { Iterator temp = *this; ++(*this); return temp; }
+        Iterator operator++(int) { Iterator temp = *this; ++(*this); return temp; }
         bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
     };
 
