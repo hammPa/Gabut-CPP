@@ -48,46 +48,46 @@ c. sort    : akan mengurutkan array, bisa descending atau ascending, tergantung 
 
 # 4. Array Library in C++
 📌 Deskripsi
-Array Library ini adalah implementasi array dinamis dalam C++ dengan berbagai fitur tambahan seperti:
-Push & Pop Elements
-Swap, Find, Delete
-Mathematical Operations (min, max, average, median, quartiles)
-Iterator Support
-Functional Operations (filter, forEach, reduce, contains)
-Operator Overloading
-Memory Management (reallocate)
+Array Library ini adalah implementasi array dinamis dalam C++ dengan berbagai fitur tambahan seperti:<br>
+Push & Pop Elements<br>
+Swap, Find, Delete<br>
+Mathematical Operations (min, max, average, median, quartiles<br>
+Iterator Support<br>
+Functional Operations (filter, forEach, reduce, contains)<br>
+Operator Overloading<br>
+Memory Management (reallocate)<br>
 
 🛠️ Fitur Utama
-Manajemen Memori
-push(value1, value2, ...)
-pop()
-reallocate_with_sum_of_element()
+Manajemen Memori<br>
+push(value1, value2, ...)<br>
+pop()<br>
+reallocate_with_sum_of_element()<br>
 
 Akses Elemen
-arr[index]
-arr.at(index)
-arr.front()
-arr.back()
+arr[index]<br>
+arr.at(index)<br>
+arr.front()<br>
+arr.back()<br>
 
 Manipulasi Data
-change(index, value)
-delete_at(index)
-delete_duplicate()
-swap(index1, index2)
+change(index, value)<br>
+delete_at(index)<br>
+delete_duplicate()<br>
+swap(index1, index2)<br>
 
 Operasi Matematis
-max(), min(), average(), median()
-quartile1(), quartile2(), quartile3()
-mode()
+max(), min(), average(), median()<br>
+quartile1(), quartile2(), quartile3()<br>
+mode()<br>
 
 Fungsi Tingkat Lanjut
-reduce([](int a, int b){ return a + b; }, 0)
-contains(value)
-filter([](int data){ return data > 20; })
-forEach([](int data){ std::cout << data * 3 << "\n"; })
+reduce([](int a, int b){ return a + b; }, 0)<br>
+contains(value)<br>
+filter([](int data){ return data > 20; }) <br>
+forEach([](int data){ std::cout << data * 3 << "\n"; }) <br>
 
 Iterator Support
-begin() dan end() untuk iterasi elemen
+begin() dan end() untuk iterasi elemen<br>
 
 Operator Overloading
-Mendukung operasi ==, !=, *, dan lainnya
+Mendukung operasi ==, !=, *, dan lainnya<br>
